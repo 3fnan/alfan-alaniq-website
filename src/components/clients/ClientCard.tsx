@@ -39,10 +39,9 @@ export default function ClientCard({ client }: ClientCardProps) {
                 <MapPin size={16} className="text-gold" />
                 <span>{client.location}</span>
             </div>
-
             <div className="mt-4">
                 <span className="rounded-full bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gold">
-                    {client.category}
+                    {client.location}
                 </span>
             </div>
         </article>
