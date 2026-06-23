@@ -1,0 +1,41 @@
+import type { Project, ProjectFilter } from "@/types";
+
+export const projects: Project[] = [
+  { id: 1, name: "Saudi German Hospital, Dubai", jobDescription: "HVAC Works", category: "HVAC", image: "/images/projects/saudi.jpeg" },
+  { id: 2, name: "Zazen One G+7, JVT Dubai", jobDescription: "VRF AC Works", category: "VRF", image: "/images/projects/zazen.png" },
+  { id: 3, name: "Honda Showroom, Sheikh Zayed Road, Dubai", jobDescription: "VRF & AHU Works", category: "VRF" },
+  { id: 4, name: "Al Barari Villa T1", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 5, name: "Feet Aid, Dubai Festival City Mall", jobDescription: "HVAC Works", category: "HVAC", image: "/images/projects/project-5.jpeg" },
+  { id: 6, name: "Etisalat Communication Center, Al Dhaid", jobDescription: "Duct Work", category: "DUCT" },
+  { id: 7, name: "US Military Camp, Fujairah", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 8, name: "Umm Al Quwain Free Zone Warehouse", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 9, name: "Posh Pelican Shipyard, Hamriyah Free Zone — Sharjah", jobDescription: "MEP Works", category: "MEP" },
+  { id: 10, name: "G+M Central Kitchen, Al Quoz", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 11, name: "Al Gurair University — Dubai", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 12, name: "Sharjah University, M01 W23 Building", jobDescription: "Duct Works", category: "DUCT" },
+  { id: 13, name: "Al Barsha Pond Park", jobDescription: "MEP Works", category: "MEP" },
+  { id: 14, name: "Anchor Allied Factory — Sharjah", jobDescription: "VRF Works", category: "VRF", image: "/images/projects/anchor.png" },
+  { id: 15, name: "Al Rifa Villas — Sharjah", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 16, name: "Al Nassma Chocolate Factory — UQM", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 17, name: "Al Ain Pharmacy RAK, Manar Mall", jobDescription: "Fit-out & HVAC Works", category: "FITOUT" },
+  { id: 18, name: "Sustainable City, Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+  { id: 19, name: "Moosa Tower Office, Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+  { id: 20, name: "Hyati Avenue, Dubai", jobDescription: "HVAC Works", category: "HVAC", image: "/images/projects/hyati.png" },
+  { id: 21, name: "X Dubai Kite Beach, Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+  { id: 22, name: "Jumeirah Golf Estates, Dubai", jobDescription: "MEP Works", category: "MEP", image: "/images/projects/golf.png" },
+  { id: 23, name: "Atlantis Hotel, Dubai", jobDescription: "Fit-out Works", category: "FITOUT", image: "/images/projects/atlantis.png" },
+  { id: 24, name: "Wavelogix FZC, Dubai", jobDescription: "HVAC Works", category: "HVAC" },
+  { id: 25, name: "Falcon City Villa, Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+  { id: 26, name: "Belgravia Villa, Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+  { id: 27, name: "Executive Towers, Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+  { id: 28, name: "Lyra Residence, Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+];
+
+export const projectFilters: ProjectFilter[] = [
+  { label: "All Projects", value: "all" },
+  { label: "HVAC Works", value: "HVAC" },
+  { label: "VRF / AHU", value: "VRF" },
+  { label: "Duct Works", value: "DUCT" },
+  { label: "MEP Works", value: "MEP" },
+  { label: "Fit-out Works", value: "FITOUT" },
+];

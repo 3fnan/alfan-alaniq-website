@@ -1,0 +1,20 @@
+import type { Metadata } from "next";
+import ProjectsHero from "@/components/projects/ProjectsHero";
+import ProjectsGrid from "@/components/projects/ProjectsGrid";
+import ContactCTASection from "@/components/home/ContactCTASection";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "28 HVAC, VRF, ducting, MEP and fit-out projects completed by Alfan Al Aniq Technical Services across Dubai, Sharjah, Abu Dhabi, RAK and the UAE.",
+};
+
+export default function ProjectsPage() {
+  return (
+    <main>
+      <ProjectsHero />
+      <ProjectsGrid />
+      <ContactCTASection />
+    </main>
+  );
+}

@@ -1,0 +1,8 @@
+/*
+  Reserved for one-off styles that don't map cleanly to Tailwind utilities
+  (e.g. complex keyframe animations for the homepage hero background).
+  Currently unused — Tailwind utility classes cover the homepage styling.
+*/
+.heroPattern {
+  background-image: radial-gradient(circle at 70% 0%, rgba(201, 164, 99, 0.12), transparent 60%);
+}
