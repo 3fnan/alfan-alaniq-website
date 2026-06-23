@@ -12,11 +12,11 @@ export default function ClientsGrid() {
           </span>
 
           <h2 className="mt-4 text-4xl font-bold text-slate-900">
-            Organisations We've Worked With
+            Organisations We&apos;ve Worked With
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Since our establishment, we've had the privilege of working with
+            Since our establishment, we&apos;ve had the privilege of working with
             contractors, developers, healthcare institutions, manufacturers,
             commercial facilities and government-related organizations across
             the UAE.
