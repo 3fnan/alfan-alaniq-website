@@ -11,8 +11,8 @@ export default function TopBar() {
           <a href={`tel:${company.phones[0].replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-gold-light">
             <Phone size={13} /> {company.phones[0]}
           </a>
-          <a href={`mailto:${company.emails}`} className="flex items-center gap-1.5 hover:text-gold-light">
-            <Mail size={13} /> {company.emails}
+          <a href={`mailto:${company.emails[1]}`} className="flex items-center gap-1.5 hover:text-gold-light">
+            <Mail size={13} /> {company.emails[1]}
           </a>
         </div>
         <div className="hidden items-center gap-1.5 lg:flex">

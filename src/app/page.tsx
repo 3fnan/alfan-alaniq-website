@@ -16,11 +16,10 @@ export default function HomePage() {
       <DuctDivider />
       <AboutSection />
       <DuctDivider />
-      <ServicesSection />
-      <WhyChooseUsSection />
-      <DuctDivider />
       <ProjectsSection />
       <DuctDivider />
+      <ServicesSection />
+      <WhyChooseUsSection />
       <ClientsSection />
       <ContactCTASection />
     </main>

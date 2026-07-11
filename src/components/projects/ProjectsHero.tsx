@@ -13,7 +13,7 @@ export default function ProjectsHero() {
         <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <Badge tone="dark">Track record</Badge>
           <h1 className="max-w-2xl font-display text-4xl font-semibold sm:text-5xl">
-            28 projects, five disciplines.
+            28+ projects, five disciplines.
           </h1>
           <p className="mt-4 max-w-xl text-lg text-[#A9B6C0]">
             From hospitals and university buildings to luxury villas and beachfront

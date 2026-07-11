@@ -51,11 +51,6 @@ export default function ContactPage() {
                 </li>
               </ul>
             </div>
-
-            <div className="border-t border-navy/10 pt-6 font-mono text-xs text-steel">
-              <p>License No. {company.licenseNumber} &mdash; {company.legalStatus}</p>
-              <p className="mt-1">TRN {company.trn}</p>
-            </div>
           </div>
 
           <div className="border border-navy/10 bg-white p-7 sm:p-9">

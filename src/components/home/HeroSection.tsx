@@ -65,8 +65,8 @@ export default function HeroSection() {
           className="mt-16 grid grid-cols-2 gap-px border border-white/10 bg-white/10 sm:grid-cols-4"
         >
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={2021} label="Founded in Dubai" /></div>
-          <div className="bg-navy-dark/60 px-5 py-6"><Counter value={28} label="Projects delivered" /></div>
-          <div className="bg-navy-dark/60 px-5 py-6"><Counter value={22} label="Prestigious clients" /></div>
+          <div className="bg-navy-dark/60 px-5 py-6"><Counter value={25} suffix="+" label="Projects delivered" /></div>
+          <div className="bg-navy-dark/60 px-5 py-6"><Counter value={20} suffix="+" label="Prestigious clients" /></div>
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={10} suffix="+" label="Trades on-site" /></div>
         </motion.div>
       </Container>

@@ -1,6 +1,7 @@
 import Container from "@/components/ui/Container";
 import ClientCard from "@/components/clients/ClientCard";
 import { clients } from "@/data/clients";
+import { Plus } from "lucide-react";
 
 export default function ClientsGrid() {
   return (
@@ -27,6 +28,28 @@ export default function ClientsGrid() {
           {clients.map((client) => (
             <ClientCard key={client.id} client={client} />
           ))}
+          {/* Many More Card */}
+
+          <article
+            className="group relative overflow-hidden rounded-2xl border border-navy/10 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-gold hover:shadow-2xl"
+          >
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gold/10 text-gold">
+              <Plus size={28} />
+            </div>
+            <h3 className="text-xl font-display font-semibold leading-snug text-navy transition-colors group-hover:text-gold">
+              And Many More...
+            </h3>
+            <p className="mt-6 text-sm leading-7 text-steel">
+              We've successfully partnered with many additional contractors,
+              developers and facility management companies across the UAE.
+            </p>
+            <div className="mt-6">
+              <span className="rounded-full bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gold">
+                25+ PROJECTS
+              </span>
+            </div>
+
+          </article>
         </div>
       </Container>
     </section>
