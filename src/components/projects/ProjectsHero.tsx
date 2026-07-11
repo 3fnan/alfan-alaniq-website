@@ -16,7 +16,7 @@ export default function ProjectsHero() {
             300+ Projects Delivered Across the UAE
           </h1>
           <p className="mt-4 max-w-xl text-lg text-[#A9B6C0]">
-            Since 2021, we've delivered HVAC, MEP, VRF, ducting and fit-out solutions across healthcare, hospitality, residential, commercial and industrial developments throughout the UAE. Below is a curated selection of representative projects from our portfolio.
+            Since 2021, we&apos;ve delivered HVAC, MEP, VRF, ducting and fit-out solutions across healthcare, hospitality, residential, commercial and industrial developments throughout the UAE. Below is a curated selection of representative projects from our portfolio.
           </p>
         </motion.div>
       </Container>
