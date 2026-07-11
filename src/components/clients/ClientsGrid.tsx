@@ -40,7 +40,7 @@ export default function ClientsGrid() {
               And Many More...
             </h3>
             <p className="mt-6 text-sm leading-7 text-steel">
-              We've successfully partnered with many additional contractors,
+              We&apos;ve successfully partnered with many additional contractors,
               developers and facility management companies across the UAE.
             </p>
             <div className="mt-6">
