@@ -2,11 +2,6 @@ import type { WhyChooseUsItem } from "@/types";
 
 export const whyChooseUs: WhyChooseUsItem[] = [
   {
-    title: "Established & Licensed",
-    description: "Operating since January 2021 under Dubai DED License No. 927018.",
-    iconKey: "trust",
-  },
-  {
     title: "Think-Together Approach",
     description: "We solve the real problem behind a comfort complaint, not just the symptom.",
     iconKey: "team",
@@ -27,8 +22,8 @@ export const whyChooseUs: WhyChooseUsItem[] = [
     iconKey: "coverage",
   },
   {
-    title: "From Install to AMC",
-    description: "Design support, installation, repair and annual maintenance contracts, end to end.",
+    title: "From Design to Delivery",
+    description: "Design support, installation, testing and commissioning, and project handover under one experienced team.",
     iconKey: "support",
   },
 ];
