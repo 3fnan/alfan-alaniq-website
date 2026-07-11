@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 interface CounterProps {
-  value: string;
+  value: number;
   suffix?: string;
   label: string;
   className?: string;
