@@ -6,9 +6,9 @@ export const services: Service[] = [
     slug: "equipment-installation",
     title: "Equipment Installation",
     description:
-      "Chillers, cooling towers, ducted & ductless splits, rooftop packaged units, VRF, FCUs and AHUs.",
+      "Chillers, ducted & ductless splits, rooftop packaged units, VRF, FCUs and AHUs.",
     longDescription:
-      "We install chillers, cooling towers, ducted split units, rooftop packaged units, Variable Refrigerant Flow (VRF) systems, ductless split units, fan coil units, air handling units and fresh air handling units — sized and commissioned to spec.",
+      "We install chillers, ducted split units, rooftop packaged units, Variable Refrigerant Flow (VRF) systems, ductless split units, fan coil units, air handling units and fresh air handling units — sized and commissioned to spec.",
     icon: Snowflake,
     image: "/images/services/hvac-installation.jpeg",
   },
@@ -52,9 +52,9 @@ export const services: Service[] = [
   },
   {
     slug: "special-applications",
-    title: "Special Applications & AMC",
+    title: "Special Applications",
     description:
-      "Site visits and tailored fixes for cooling, humidity or air-quality issues, plus annual maintenance contracts.",
+      "Site visits and tailored fixes for cooling, humidity or air-quality issues.",
     longDescription:
       "Facing lack of cooling, high humidity or poor indoor air quality in an occupied building? We visit, analyse and propose the optimum fix — and we offer annual maintenance contracts (AMC) to keep it that way.",
     icon: Settings2,

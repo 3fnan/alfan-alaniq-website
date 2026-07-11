@@ -6,7 +6,7 @@ import ContactCTASection from "@/components/home/ContactCTASection";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "28 HVAC, VRF, ducting, MEP and fit-out projects completed by Alfan Al Aniq Technical Services across Dubai, Sharjah, Abu Dhabi, RAK and the UAE.",
+    "300+ HVAC, VRF, ducting, MEP and fit-out projects completed by Alfan Al Aniq Technical Services across Dubai, Sharjah, Abu Dhabi, RAK and the UAE.",
 };
 
 export default function ProjectsPage() {

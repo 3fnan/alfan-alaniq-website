@@ -45,7 +45,7 @@ export default function ClientsGrid() {
             </p>
             <div className="mt-6">
               <span className="rounded-full bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gold">
-                25+ PROJECTS
+                300+ PROJECTS
               </span>
             </div>
 

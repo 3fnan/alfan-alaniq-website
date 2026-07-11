@@ -15,7 +15,7 @@ export default function ProjectsSection() {
       <Container>
         <SectionHeading
           eyebrow="Track record"
-          title="28 projects, five disciplines."
+          title="Few of our projects:"
           description="From hospitals and university buildings to luxury villas and beachfront fit-outs."
         />
 
@@ -56,7 +56,7 @@ export default function ProjectsSection() {
 
         <div className="mt-12 text-center">
           <Button href="/projects" variant="outline">
-            View All 28 Projects
+            View Featured Projects
           </Button>
         </div>
       </Container>
