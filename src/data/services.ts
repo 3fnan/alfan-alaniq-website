@@ -10,7 +10,7 @@ export const services: Service[] = [
     longDescription:
       "We install chillers, ducted split units, rooftop packaged units, Variable Refrigerant Flow (VRF) systems, ductless split units, fan coil units, air handling units and fresh air handling units — sized and commissioned to spec.",
     icon: Snowflake,
-    image: "/images/services/hvac-installation.jpeg",
+    image: "/images/services/equipment.png",
   },
   {
     slug: "ducting-air-distribution",
@@ -20,7 +20,7 @@ export const services: Service[] = [
     longDescription:
       "Our duct fabricators build and install supply, exhaust and ventilation ductwork in-house, along with air outlets and flow controllers, so air distribution is balanced exactly as designed.",
     icon: Workflow,
-    image: "/images/services/ducting.jpeg",
+    image: "/images/services/ducting.png",
   },
   {
     slug: "ventilation",
@@ -30,7 +30,7 @@ export const services: Service[] = [
     longDescription:
       "From kitchen ecology units to exhaust fan installation with volume control, we handle the ventilation side of indoor air quality, including automation of ventilation systems.",
     icon: Wind,
-    image: "/images/services/mep.jpeg",
+    image: "/images/services/ventilation.png",
   },
   {
     slug: "repair-services",
@@ -39,7 +39,7 @@ export const services: Service[] = [
     longDescription:
       "Our technicians provide breakdown repair service for air-conditioning equipment across all makes and models — diagnosed on-site, fixed fast.",
     icon: Wrench,
-    image: "/images/services/repair.jpeg",
+    image: "/images/services/repair.png",
   },
   {
     slug: "design-support",
@@ -48,7 +48,7 @@ export const services: Service[] = [
     longDescription:
       "Our in-house HVAC professionals provide design support including thermal load calculation and duct design, so installs are right-sized from day one.",
     icon: Ruler,
-    image: "/images/services/amc.jpeg",
+    image: "/images/services/design.png",
   },
   {
     slug: "special-applications",
@@ -58,6 +58,6 @@ export const services: Service[] = [
     longDescription:
       "Facing lack of cooling, high humidity or poor indoor air quality in an occupied building? We visit, analyse and propose the optimum fix — and we offer annual maintenance contracts (AMC) to keep it that way.",
     icon: Settings2,
-    image: "/images/services/maintenance.jpeg",
+    image: "/images/services/special.png",
   },
 ];

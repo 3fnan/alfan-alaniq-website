@@ -21,7 +21,11 @@ export default function ProjectsSection() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((project, i) => (
-            <AnimatedCard key={project.id} delay={i * 0.05}>
+            <AnimatedCard
+              key={project.id}
+              delay={i * 0.05}
+              className="h-full"
+            >
               <div className="overflow-hidden rounded-xl border border-navy/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 
                 {/* Project Image */}

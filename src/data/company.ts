@@ -7,7 +7,7 @@ export const company: CompanyDetails = {
   legalStatus: "Sole Establishment",
   trn: "100312070400003",
   address:
-    "Office #205-035, H.H Sh. Saud Bin Saqar Building, Al Muteena-1, P.O. Box 91390, Deira, Dubai, U.A.E.",
+    "Heirs of Ahmed Obaid Bin Touq Al Marri Building - Al Marar, Deira, Dubai, U.A.E.",
   emails: ["info@alfanalaniq.ae", "ihsan@alfanalaniq.ae"],
   phones: ["+971 52 783 8646", "+971 52 415 0026"],
   founded: "2021",
