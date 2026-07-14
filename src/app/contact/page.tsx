@@ -35,7 +35,7 @@ export default function ContactPage() {
               <ul className="mt-5 space-y-4 text-[15px] text-[#33414C]">
                 <li className="flex items-start gap-3">
                   <Mail className="mt-0.5 h-4.5 w-4.5 flex-none text-gold" />
-                  <a href={`mailto:${company.emails}`} className="hover:text-gold">{company.emails}</a>
+                  <a href={`mailto:${company.emails}`} className="hover:text-gold">{company.emails[1]}</a>
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone className="mt-0.5 h-4.5 w-4.5 flex-none text-gold" />

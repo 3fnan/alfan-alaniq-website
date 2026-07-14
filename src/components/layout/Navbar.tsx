@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { navLinks } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 import MobileMenu from "./MobileMenu";
@@ -51,13 +52,50 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <Link
-          href="/contact"
-          className="hidden rounded-sm border border-gold px-4.5 py-2 text-[12.5px] font-semibold text-gold-light transition-colors hover:bg-gold hover:text-navy md:inline-block"
-        >
-          Request a Quote
-        </Link>
+        <div className="hidden items-center md:flex">
+          <div className="hidden md:flex">
+            <div className="flex overflow-hidden rounded-lg border border-gold/70 bg-navy/40 backdrop-blur-sm">
+              {/* Call */}
+              <a
+                href="tel:+971527838646"
+                aria-label="Call Us"
+                className="group flex h-11 w-11 items-center justify-center border-r border-gold/30 text-gold-light transition-all duration-300 hover:bg-gold hover:text-navy"
+              >
+                <Phone
+                  size={18}
+                  strokeWidth={2.2}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
 
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/971527838646"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="group flex h-11 w-11 items-center justify-center border-r border-gold/30 text-gold-light transition-all duration-300 hover:bg-gold hover:text-navy"
+              >
+                <FaWhatsapp
+                  size={18}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              {/* CTA */}
+              <Link
+                href="/contact"
+                className="group flex h-11 items-center gap-2 px-6 text-[13px] font-semibold tracking-wide text-gold-light transition-all duration-300 hover:bg-gold hover:text-navy"
+              >
+                <span>Request a Quote</span>
+
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
         <button
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
