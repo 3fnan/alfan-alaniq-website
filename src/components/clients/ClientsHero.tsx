@@ -1,10 +1,15 @@
 import Container from "@/components/ui/Container";
 import { clients } from "@/data/clients";
+import BackgroundGrid from "@/components/ui/BackgroundGrid";
+import BlurCircle from "@/components/ui/BlurCircle";
 
 export default function ClientsHero() {
   return (
-    <section className="bg-[#071f3b] py-28 text-white">
-      <Container>
+    <section className="relative overflow-hidden bg-gradient-to-br from-navy-light via-navy to-navy-dark py-28 text-white">
+      <BackgroundGrid />
+      <BlurCircle className="-right-32 -top-32" />
+      <BlurCircle className="bottom-0 left-0" color="#15324E" />
+      <Container className="relative z-10">
         <span className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-500">
           Our Clients
         </span>
