@@ -96,17 +96,30 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="text-bg md:hidden"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <a
+            href="tel:+971527838646"
+            aria-label="Call Us"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-all duration-300 hover:bg-gold hover:text-navy"
+          >
+            <Phone size={20} />
+          </a>
+
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="flex h-10 w-10 items-center justify-center rounded-full text-bg transition-all duration-300 hover:bg-white/10"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
+      <MobileMenu
+        open={open}
+        onClose={() => setOpen(false)}
+      />
     </header>
   );
 }

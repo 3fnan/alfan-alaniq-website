@@ -66,7 +66,7 @@ export default function HeroSection() {
         >
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={2021} label="Founded in Dubai" /></div>
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={300} suffix="+" label="Projects delivered" /></div>
-          <div className="bg-navy-dark/60 px-5 py-6"><Counter value={20} suffix="+" label="Prestigious clients" /></div>
+          <div className="bg-navy-dark/60 px-5 py-6"><Counter value={40} suffix="+" label="Prestigious clients" /></div>
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={10} suffix="+" label="Trades on-site" /></div>
         </motion.div>
       </Container>

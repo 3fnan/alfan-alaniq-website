@@ -1,11 +1,11 @@
 export const companyStats = [
   {
-    value: 22,
+    value: 40,
     suffix: "+",
     label: "Clients",
   },
   {
-    value: 75,
+    value: 300,
     suffix: "+",
     label: "Projects",
   },

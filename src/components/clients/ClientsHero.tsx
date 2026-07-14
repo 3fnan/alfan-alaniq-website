@@ -24,7 +24,7 @@ export default function ClientsHero() {
 
           <div className="rounded-xl border border-white/10 bg-white/5 px-6 py-5 backdrop-blur">
             <p className="text-3xl font-display font-bold text-gold">
-              {clients.length}+
+              {'40'}+
             </p>
             <p className="mt-1 text-sm uppercase tracking-[0.2em] text-slate-300">
               Trusted Clients
