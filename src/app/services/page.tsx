@@ -5,6 +5,8 @@ import Badge from "@/components/ui/Badge";
 import AnimatedCard from "@/components/ui/AnimatedCard";
 import ContactCTASection from "@/components/home/ContactCTASection";
 import { services } from "@/data/services";
+import BackgroundGrid from "@/components/ui/BackgroundGrid";
+import BlurCircle from "@/components/ui/BlurCircle";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -15,8 +17,16 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main>
-      <section className="bg-navy py-16 text-bg">
-        <Container>
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-light via-navy to-navy-dark py-28 text-white">
+        <BackgroundGrid />
+
+        <BlurCircle className="-right-32 -top-32" />
+
+        <BlurCircle
+          className="bottom-0 left-0"
+          color="#15324E"
+        />
+        <Container className="relative z-10">
           <Badge tone="dark">What we do</Badge>
           <h1 className="max-w-2xl font-display text-4xl font-semibold sm:text-5xl">
             Six disciplines, one comfort system.
@@ -36,9 +46,8 @@ export default function ServicesPage() {
             return (
               <AnimatedCard key={service.slug} delay={0.05}>
                 <div
-                  className={`grid items-center gap-10 lg:grid-cols-2 ${
-                    reversed ? "lg:[&>*:first-child]:order-2" : ""
-                  }`}
+                  className={`grid items-center gap-10 lg:grid-cols-2 ${reversed ? "lg:[&>*:first-child]:order-2" : ""
+                    }`}
                 >
                   <div className="relative h-64 w-full overflow-hidden border border-navy/10 sm:h-80">
                     <Image

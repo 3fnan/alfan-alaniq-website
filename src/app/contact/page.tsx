@@ -4,6 +4,8 @@ import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
 import ContactForm from "@/components/forms/ContactForm";
 import { company } from "@/data/company";
+import BackgroundGrid from "@/components/ui/BackgroundGrid";
+import BlurCircle from "@/components/ui/BlurCircle";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -14,8 +16,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <section className="bg-navy py-16 text-bg">
-        <Container>
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-light via-navy to-navy-dark py-28 text-white">
+        <BackgroundGrid />
+
+        <BlurCircle className="-right-32 -top-32" />
+
+        <BlurCircle
+          className="bottom-0 left-0"
+          color="#15324E"
+        />
+        <Container className="relative z-10">
           <Badge tone="dark">Get in touch</Badge>
           <h1 className="max-w-2xl font-display text-4xl font-semibold sm:text-5xl">
             Let&apos;s think it through together.
