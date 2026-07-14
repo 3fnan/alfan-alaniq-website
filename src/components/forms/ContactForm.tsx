@@ -1,17 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { Loader2, Send, CheckCircle2 } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 import { services } from "@/data/services";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Enter a valid email address"),
-  phone: z.string().optional(),
+  phone: z.string().min(8, "Please enter your contact number"),
   service: z.string().optional(),
   message: z.string().min(10, "Tell us a little more about the job (min. 10 characters)"),
 });
@@ -19,7 +18,6 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
 
   const {
     register,
@@ -31,36 +29,32 @@ export default function ContactForm() {
   });
 
   async function onSubmit(values: ContactFormValues) {
-    // Wire this up to your backend / email service of choice.
-    // For now we simulate a network call so the success state is visible.
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    console.log("Contact form submission:", values);
-    setSubmitted(true);
-    reset();
-  }
+    const message = `Hello AL FAN AL ANIQ TECHNICAL SERVICES,
 
-  if (submitted) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col items-start gap-3 border border-gold/30 bg-bg-warm p-8"
-      >
-        <CheckCircle2 className="h-8 w-8 text-gold" />
-        <h3 className="font-display text-xl font-semibold text-navy">Message sent.</h3>
-        <p className="text-steel">
-          Thanks for reaching out — we&apos;ll get back to you shortly to schedule a
-          site visit or assessment.
-        </p>
-        <button
-          type="button"
-          onClick={() => setSubmitted(false)}
-          className="mt-2 text-sm font-medium text-gold underline-offset-4 hover:underline"
-        >
-          Send another message
-        </button>
-      </motion.div>
-    );
+I would like to request a quotation.
+
+*Full Name:* ${values.name}
+
+*Email:* ${values.email}
+
+*Phone:* ${values.phone || "Not provided"}
+
+*Service Required:* ${values.service || "Not specified"}
+
+*Project Details:*
+${values.message}
+
+Thank you.`;
+
+    const whatsappNumber = "971527838646";
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(whatsappUrl, "_blank");
+
+    reset();
   }
 
   return (
@@ -98,7 +92,7 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-navy">
-            Phone <span className="text-steel">(optional)</span>
+            Phone <span className="text-steel"></span>
           </label>
           <input
             id="phone"
@@ -158,7 +152,7 @@ export default function ContactForm() {
             </motion.span>
           ) : (
             <motion.span key="idle" className="flex items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <Send className="h-4 w-4" /> Send Message
+              <Send className="h-4 w-4" /> Send via WhatsApp
             </motion.span>
           )}
         </AnimatePresence>
