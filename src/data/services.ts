@@ -56,7 +56,7 @@ export const services: Service[] = [
     description:
       "Site visits and tailored fixes for cooling, humidity or air-quality issues.",
     longDescription:
-      "Facing lack of cooling, high humidity or poor indoor air quality in an occupied building? We visit, analyse and propose the optimum fix — and we offer annual maintenance contracts (AMC) to keep it that way.",
+      "Experiencing cooling issues, excess humidity, or poor indoor air quality? Our specialists assess your building, identify the root cause, and implement the most effective HVAC solution for long-term performance.",
     icon: Settings2,
     image: "/images/services/special.png",
   },
