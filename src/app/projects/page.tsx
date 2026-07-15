@@ -4,6 +4,7 @@ import ProjectsGrid from "@/components/projects/ProjectsGrid";
 import ContactCTASection from "@/components/home/ContactCTASection";
 import BackgroundGrid from "@/components/ui/BackgroundGrid";
 import BlurCircle from "@/components/ui/BlurCircle";
+import ProjectsSummary from "@/components/projects/ProjectsSummary";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -16,6 +17,7 @@ export default function ProjectsPage() {
     <main>
       <ProjectsHero />
       <ProjectsGrid />
+      <ProjectsSummary />
       <ContactCTASection />
     </main>
   );

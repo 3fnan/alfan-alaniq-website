@@ -26,9 +26,7 @@ export default function ProjectsSection() {
               delay={i * 0.05}
               className="h-full"
             >
-              <div className="overflow-hidden rounded-xl border border-navy/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-
-                {/* Project Image */}
+              <div className="flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="relative h-60 w-full overflow-hidden">
                   <Image
                     src={project.image!}
