@@ -1,3 +1,5 @@
+import { type Project } from "@/types";
+
 type ProjectRowProps = {
     project: Project;
 };

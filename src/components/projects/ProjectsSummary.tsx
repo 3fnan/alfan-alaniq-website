@@ -35,7 +35,7 @@ export default function ProjectsSummary() {
                         Planning your next project?
                     </h3>
                     <p className="mx-auto mt-4 max-w-2xl text-center text-steel">
-                        Whether you're planning a new installation, system upgrade, fit-out or
+                        Whether you&apos;re planning a new installation, system upgrade, fit-out or
                         technical maintenance, our experienced team is ready to understand your
                         requirements and recommend the right solution.
                     </p>

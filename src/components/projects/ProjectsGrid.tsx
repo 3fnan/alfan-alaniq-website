@@ -6,7 +6,6 @@ import Container from "@/components/ui/Container";
 import { projects, projectFilters } from "@/data/projects";
 import type { ProjectFilter } from "@/types";
 import { cn } from "@/lib/utils";
-import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 
 export default function ProjectsGrid() {
   const [active, setActive] = useState<ProjectFilter["value"]>("all");
@@ -45,7 +44,7 @@ export default function ProjectsGrid() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: i * 0.02 }}
             >
-              <div className="bg-white p-7 flex h-full flex-col rounded-2xl border border-navy/10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="bg-white p-7 flex h-full flex-col rounded-2xl border border-navy/10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lg">
                 {/* Project Info */}
                 <div>
                   <div className="space-y-4">
@@ -67,7 +66,6 @@ export default function ProjectsGrid() {
                   <span className="inline-block rounded-full bg-gold/15 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-[#8A6A2E]">
                     {project.jobDescription}
                   </span>
-                  <ArrowUpLeft />
                 </div>
               </div>
             </motion.div>

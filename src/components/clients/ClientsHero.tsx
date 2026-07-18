@@ -1,5 +1,4 @@
 import Container from "@/components/ui/Container";
-import { clients } from "@/data/clients";
 import BackgroundGrid from "@/components/ui/BackgroundGrid";
 import BlurCircle from "@/components/ui/BlurCircle";
 

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import ProjectsHero from "@/components/projects/ProjectsHero";
 import ProjectsGrid from "@/components/projects/ProjectsGrid";
 import ContactCTASection from "@/components/home/ContactCTASection";
-import BackgroundGrid from "@/components/ui/BackgroundGrid";
-import BlurCircle from "@/components/ui/BlurCircle";
 import ProjectsSummary from "@/components/projects/ProjectsSummary";
 
 export const metadata: Metadata = {
