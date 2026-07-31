@@ -6,7 +6,7 @@ export const projects: Project[] = [
   { id: 3, name: "Honda Showroom, Sheikh Zayed Road", location: "Dubai", jobDescription: "VRF & AHU Works", category: "VRF", image: "/images/projects/honda.png" },
   { id: 4, name: "Al Barari Villa T1", location: "Dubai", jobDescription: "HVAC Works", category: "HVAC" },
   { id: 5, name: "Feet Aid, Dubai Festival City Mall", location: "Dubai", jobDescription: "HVAC Works", category: "HVAC", image: "/images/projects/project-5.jpeg" },
-  { id: 6, name: "Etisalat Communication Center", location: "Al Dhaid", jobDescription: "Duct Work", category: "DUCT", image: "/images/projects/etisalat.png" },
+  { id: 6, name: "Etisalat Communication Center", location: "Sharajah", jobDescription: "Duct Work", category: "DUCT", image: "/images/projects/etisalat.png" },
   { id: 7, name: "US Military Camp", location: "Fujairah", jobDescription: "HVAC Works", category: "HVAC" },
   { id: 8, name: "Umm Al Quwain Free Zone Warehouse", location: "Umm Al Quwain", jobDescription: "HVAC Works", category: "HVAC" },
   { id: 9, name: "Posh Pelican Shipyard", location: "Hamriyah Free Zone — Sharjah", jobDescription: "MEP Works", category: "MEP" },

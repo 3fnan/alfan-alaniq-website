@@ -48,7 +48,7 @@ export default function ProjectsSection() {
                   </h3>
 
                   <p className="mt-3 text-sm text-steel">
-                    UAE
+                    {project.location}
                   </p>
                 </div>
               </div>
