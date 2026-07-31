@@ -5,7 +5,7 @@ import AnimatedCard from "@/components/ui/AnimatedCard";
 import Button from "@/components/ui/Button";
 import { projects } from "@/data/projects";
 
-const FEATURED_IDS = [1, 2, 20, 23, 22, 14];
+const FEATURED_IDS = [1, 2, 20, 23, 22, 29, 3, 6, 30];
 
 export default function ProjectsSection() {
   const featured = projects.filter((p) => FEATURED_IDS.includes(p.id));

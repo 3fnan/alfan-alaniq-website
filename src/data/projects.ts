@@ -3,10 +3,10 @@ import type { Project, ProjectFilter } from "@/types";
 export const projects: Project[] = [
   { id: 1, name: "Saudi German Hospital", location: "Dubai", jobDescription: "HVAC Works", category: "HVAC", image: "/images/projects/saudi.jpeg" },
   { id: 2, name: "Zazen One G+7, JVT", location: "Dubai", jobDescription: "VRF AC Works", category: "VRF", image: "/images/projects/zazen.png" },
-  { id: 3, name: "Honda Showroom, Sheikh Zayed Road", location: "Dubai", jobDescription: "VRF & AHU Works", category: "VRF" },
+  { id: 3, name: "Honda Showroom, Sheikh Zayed Road", location: "Dubai", jobDescription: "VRF & AHU Works", category: "VRF", image: "/images/projects/honda.png" },
   { id: 4, name: "Al Barari Villa T1", location: "Dubai", jobDescription: "HVAC Works", category: "HVAC" },
   { id: 5, name: "Feet Aid, Dubai Festival City Mall", location: "Dubai", jobDescription: "HVAC Works", category: "HVAC", image: "/images/projects/project-5.jpeg" },
-  { id: 6, name: "Etisalat Communication Center", location: "Al Dhaid", jobDescription: "Duct Work", category: "DUCT" },
+  { id: 6, name: "Etisalat Communication Center", location: "Al Dhaid", jobDescription: "Duct Work", category: "DUCT", image: "/images/projects/etisalat.png" },
   { id: 7, name: "US Military Camp", location: "Fujairah", jobDescription: "HVAC Works", category: "HVAC" },
   { id: 8, name: "Umm Al Quwain Free Zone Warehouse", location: "Umm Al Quwain", jobDescription: "HVAC Works", category: "HVAC" },
   { id: 9, name: "Posh Pelican Shipyard", location: "Hamriyah Free Zone — Sharjah", jobDescription: "MEP Works", category: "MEP" },
@@ -29,6 +29,8 @@ export const projects: Project[] = [
   { id: 26, name: "Belgravia Villa", location: " Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
   { id: 27, name: "Executive Towers", location: " Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
   { id: 28, name: "Lyra Residence", location: " Dubai", jobDescription: "Fit-out Works", category: "FITOUT" },
+  { id: 29, name: "Jumeirah Islands", location: "Dubai", jobDescription: "HVAC Works", category: "HVAC", image: "/images/projects/island.png", },
+  { id: 30, name: "University of Sharjah", location: "Sharjah", jobDescription: "Duct Works", category: "DUCT", image: "/images/projects/shj.png", },
 ];
 
 export const projectFilters: ProjectFilter[] = [
