@@ -7,13 +7,20 @@ html {
 }
 
 body {
-  background-color: #f7f4ec;
-  color: #161b22;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 ::selection {
-  background: #c9a463;
-  color: #0e2238;
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+:root {
+  --color-bg: #f7f4ec;
+  --color-text: #161b22;
+  --color-navy: #0e2238;
+  --color-gold: #d4b06a;
 }
 
 @layer utilities {
@@ -21,6 +28,7 @@ body {
     text-wrap: balance;
   }
 }
+
 /* ==========================
    CLIENT LOGO MARQUEE
 ========================== */

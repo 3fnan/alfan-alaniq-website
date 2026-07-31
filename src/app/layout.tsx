@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Zilla_Slab, Inter, IBM_Plex_Mono } from "next/font/google";
-
+import { Bricolage_Grotesque, Inter, IBM_Plex_Mono, } from "next/font/google";
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const zillaSlab = Zilla_Slab({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-zilla",
-  display: "swap",
-});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,6 +17,13 @@ const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-plex-mono",
+  display: "swap",
+});
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bricolage",
   display: "swap",
 });
 
@@ -60,7 +60,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${zillaSlab.variable} ${inter.variable} ${plexMono.variable} font-sans`}>
+      <body
+        className={`${bricolage.variable} ${inter.variable} ${plexMono.variable} font-sans`}>
         <TopBar />
         <Navbar />
         {children}

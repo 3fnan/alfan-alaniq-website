@@ -29,7 +29,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="max-w-2xl font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-[64px]"
+          className="max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-[64px]"
         >
           Comfort is multidimensional.{" "}
           <span className="text-gold-light">We engineer every part of it.</span>

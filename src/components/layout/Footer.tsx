@@ -10,7 +10,7 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 border-b border-white/10 pb-12 md:grid-cols-3">
           <div>
-            <span className="block font-display text-lg font-semibold">Alfan Al Aniq</span>
+            <span className="block font-display text-lg">Alfan Al Aniq</span>
             <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-gold-light">
               Technical Services
             </span>
