@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -10,8 +10,17 @@ interface AnimatedCardProps {
   className?: string;
 }
 
-/** Card that fades/slides in on scroll and lifts gently on hover. */
+/**
+ * Card that fades/slides in on scroll and lifts gently on hover.
+ * Renders statically for visitors who prefer reduced motion.
+ */
 export default function AnimatedCard({ children, delay = 0, className }: AnimatedCardProps) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div className={cn(className)}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

@@ -15,7 +15,7 @@ export default function ProjectsSection() {
       <Container>
         <SectionHeading
           eyebrow="Track record"
-          title="Few of our projects:"
+          title="Selected projects"
           description="From hospitals and university buildings to luxury villas and beachfront fit-outs."
         />
 
@@ -30,10 +30,10 @@ export default function ProjectsSection() {
                 <div className="relative h-60 w-full overflow-hidden">
                   <Image
                     src={project.image!}
-                    alt={project.name}
+                    alt={`${project.name}, ${project.location}`}
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
 

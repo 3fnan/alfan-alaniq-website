@@ -42,10 +42,9 @@ export default function AboutSection() {
             <div className="group relative h-72 overflow-hidden rounded-2xl shadow-2xl lg:h-[460px]">
               <Image
                 src="/images/about/about-installation.png"
-                alt="Alfan Alaniq Technical Services"
+                alt="HVAC chiller, ductwork and plant-room equipment"
                 fill
-                priority
-                sizes="(max-width:1024px)100vw,50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
