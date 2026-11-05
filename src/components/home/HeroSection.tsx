@@ -64,11 +64,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-16 grid grid-cols-2 gap-px border border-white/10 bg-white/10 sm:grid-cols-4"
         >
-          {/* A year isn't a quantity, so it shouldn't count up */}
-          <div className="bg-navy-dark/60 px-5 py-6">
-            <div className="font-display text-3xl font-semibold text-gold-light">2021</div>
-            <div className="mt-1 text-xs text-[#A9B6C0]">Founded in Dubai</div>
-          </div>
+          <div className="bg-navy-dark/60 px-5 py-6"><Counter value={2021} label="Founded in Dubai" /></div>
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={300} suffix="+" label="Projects delivered" /></div>
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={40} suffix="+" label="Clients across the UAE" /></div>
           <div className="bg-navy-dark/60 px-5 py-6"><Counter value={10} suffix="+" label="Trades on-site" /></div>
