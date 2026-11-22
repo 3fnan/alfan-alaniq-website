@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedCard from "@/components/ui/AnimatedCard";
+import Reveal from "@/components/ui/Reveal";
+import ImageReveal from "@/components/ui/ImageReveal";
 import Button from "@/components/ui/Button";
 import { projects } from "@/data/projects";
 
@@ -11,55 +13,40 @@ export default function ProjectsSection() {
   const featured = projects.filter((p) => FEATURED_IDS.includes(p.id));
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 sm:py-24">
       <Container>
-        <SectionHeading
-          eyebrow="Track record"
-          title="Few of our projects:"
-          description="From hospitals and university buildings to luxury villas and beachfront fit-outs."
-        />
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <SectionHeading
+            title="Recent projects"
+            description="Hospitals, university buildings, showrooms, villas and hotel fit-outs."
+            className="mb-0"
+          />
+          <Button href="/projects" variant="outline" className="self-start sm:mb-1 sm:self-auto">
+            All projects
+          </Button>
+        </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((project, i) => (
-            <AnimatedCard
-              key={project.id}
-              delay={i * 0.05}
-              className="h-full"
-            >
-              <div className="flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="relative h-60 w-full overflow-hidden">
+            <Reveal as="article" key={project.id} delay={(i % 3) * 0.1}>
+              <Link href="/projects" className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+                <ImageReveal className="aspect-[4/3] w-full" delay={(i % 3) * 0.1}>
                   <Image
                     src={project.image!}
                     alt={project.name}
                     fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                </div>
-
-                {/* Card Content */}
-                <div className="p-6">
-                  <span className="inline-block rounded-full bg-gold/15 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-[#8A6A2E]">
-                    {project.jobDescription}
-                  </span>
-
-                  <h3 className="mt-4 font-display text-2xl font-semibold text-navy">
-                    {project.name}
-                  </h3>
-
-                  <p className="mt-3 text-sm text-steel">
-                    {project.location}
-                  </p>
-                </div>
-              </div>
-            </AnimatedCard>
+                </ImageReveal>
+                <p className="mt-4 font-mono text-xs text-gold-ink">{project.jobDescription}</p>
+                <h3 className="mt-1 font-display text-xl font-semibold leading-snug text-navy transition-colors group-hover:text-gold-ink">
+                  {project.name}
+                </h3>
+                <p className="mt-1 text-sm text-steel">{project.location}</p>
+              </Link>
+            </Reveal>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button href="/projects" variant="outline">
-            View Featured Projects
-          </Button>
         </div>
       </Container>
     </section>

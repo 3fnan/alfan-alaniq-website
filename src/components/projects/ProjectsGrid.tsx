@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+import { EASE } from "@/components/ui/Reveal";
 import { projects, projectFilters } from "@/data/projects";
 import type { ProjectFilter } from "@/types";
 import { cn } from "@/lib/utils";
@@ -16,61 +17,75 @@ export default function ProjectsGrid() {
   );
 
   return (
-    <section className="py-16">
+    <section className="py-14 sm:py-20">
       <Container>
-        <div className="mb-10 flex flex-wrap gap-2.5">
-          {projectFilters.map((filter) => (
-            <button
-              key={filter.value}
-              type="button"
-              onClick={() => setActive(filter.value)}
-              className={cn(
-                "rounded-full border px-4 py-2 font-mono text-[11.5px] uppercase tracking-wide transition-colors",
-                active === filter.value
-                  ? "border-navy bg-navy text-gold-light"
-                  : "border-navy/10 bg-white text-steel hover:border-navy/30"
-              )}
-            >
-              {filter.label}
-            </button>
-          ))}
+        <div role="group" aria-label="Filter projects by type" className="mb-8 flex flex-wrap gap-2">
+          {projectFilters.map((filter) => {
+            const on = active === filter.value;
+            return (
+              <button
+                key={filter.value}
+                type="button"
+                aria-pressed={on}
+                onClick={() => setActive(filter.value)}
+                className={cn(
+                  "relative rounded-full border px-4 py-1.5 text-sm transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2",
+                  on ? "border-navy text-bg" : "border-navy/20 text-body hover:border-navy/50"
+                )}
+              >
+                {on && (
+                  <motion.span
+                    layoutId="filter-pill"
+                    className="absolute inset-0 -z-0 rounded-full bg-navy"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
+                )}
+                <span className="relative">{filter.label}</span>
+              </button>
+            );
+          })}
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: i * 0.02 }}
-            >
-              <div className="bg-white p-7 flex h-full flex-col rounded-2xl border border-navy/10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lg">
-                {/* Project Info */}
-                <div>
-                  <div className="space-y-4">
-                    <h3 className="font-display text-xl font-semibold text-navy">
+        <p className="mb-3 font-mono text-xs text-steel" aria-live="polite">
+          Showing {filtered.length} of {projects.length}
+        </p>
+
+        <table className="w-full text-left text-[15px]">
+          <thead className="hidden border-b-2 border-navy text-xs text-steel sm:table-header-group">
+            <tr>
+              <th scope="col" className="py-3 pr-5 font-medium">Project</th>
+              <th scope="col" className="px-5 py-3 font-medium">Location</th>
+              <th scope="col" className="py-3 pl-5 font-medium">Scope</th>
+            </tr>
+          </thead>
+          <tbody>
+            <AnimatePresence initial={false} mode="popLayout">
+              {filtered.map((project, i) => (
+                <motion.tr
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 12 }}
+                  transition={{ duration: 0.35, delay: Math.min(i * 0.02, 0.3), ease: EASE }}
+                  className="group block border-b border-navy/10 py-4 transition-colors hover:bg-white sm:table-row sm:py-0"
+                >
+                  <td className="block font-medium text-navy sm:table-cell sm:py-4 sm:pr-5">
+                    <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
                       {project.name}
-                    </h3>
-
-                    <p className="text-sm text-steel">
-                      {project.location}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="my-5 h-px bg-navy/10" />
-
-                {/* Footer */}
-                <div className="flex items-center justify-between">
-                  <span className="inline-block rounded-full bg-gold/15 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-[#8A6A2E]">
+                    </span>
+                  </td>
+                  <td className="block text-sm text-steel sm:table-cell sm:px-5 sm:py-4 sm:text-[15px]">
+                    {project.location}
+                  </td>
+                  <td className="mt-1 block text-sm text-gold-ink sm:mt-0 sm:table-cell sm:py-4 sm:pl-5 sm:text-[15px]">
                     {project.jobDescription}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                  </td>
+                </motion.tr>
+              ))}
+            </AnimatePresence>
+          </tbody>
+        </table>
       </Container>
     </section>
   );

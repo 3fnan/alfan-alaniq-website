@@ -3,119 +3,113 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { motion, AnimatePresence } from "framer-motion";
-import { Loader2, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { services } from "@/data/services";
+import { company, whatsappHref } from "@/data/company";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Please enter your name"),
-  email: z.string().email("Enter a valid email address"),
-  phone: z.string().min(8, "Please enter your contact number"),
+  name: z.string().trim().min(2, "Please enter your name"),
+  phone: z.string().trim().min(8, "Please enter a contact number"),
+  email: z.union([z.literal(""), z.string().trim().email("Enter a valid email address")]).optional(),
   service: z.string().optional(),
-  message: z.string().min(10, "Tell us a little more about the job (min. 10 characters)"),
+  message: z.string().trim().min(10, "Please add a few details about the job"),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
-export default function ContactForm() {
+// Underline-only fields: no boxes, the line turns gold on focus.
+const inputCls =
+  "w-full border-0 border-b-2 border-navy/15 bg-transparent px-0 py-2.5 text-[15px] text-ink transition-colors duration-300 placeholder:text-steel/60 focus:border-gold focus:outline-none focus:ring-0 aria-[invalid=true]:border-red-600";
+const labelCls = "mb-1.5 block text-sm font-medium text-navy";
+const errorCls = "mt-1 text-xs text-red-700";
 
+export default function ContactForm() {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
+    defaultValues: { name: "", phone: "", email: "", service: "", message: "" },
   });
 
-  async function onSubmit(values: ContactFormValues) {
-    const message = `Hello AL FAN AL ANIQ TECHNICAL SERVICES,
+  function onSubmit(values: ContactFormValues) {
+    const lines = [
+      `Hello ${company.tradeName},`,
+      "",
+      "I would like to request a quotation.",
+      "",
+      `*Name:* ${values.name}`,
+      `*Phone:* ${values.phone}`,
+      values.email ? `*Email:* ${values.email}` : null,
+      `*Service:* ${values.service || "Not specified"}`,
+      "",
+      "*Job details:*",
+      values.message,
+    ].filter((l): l is string => l !== null);
 
-I would like to request a quotation.
-
-*Full Name:* ${values.name}
-
-*Email:* ${values.email}
-
-*Phone:* ${values.phone || "Not provided"}
-
-*Service Required:* ${values.service || "Not specified"}
-
-*Project Details:*
-${values.message}
-
-Thank you.`;
-
-    const whatsappNumber = "971527838646";
-
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-
-    window.open(whatsappUrl, "_blank");
-
+    window.open(whatsappHref(lines.join("\n")), "_blank", "noopener,noreferrer");
     reset();
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-7">
+      <div className="grid gap-7 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-navy">
+          <label htmlFor="name" className={labelCls}>
             Full name
           </label>
           <input
             id="name"
             type="text"
+            autoComplete="name"
+            aria-invalid={!!errors.name}
             {...register("name")}
-            className="w-full border border-navy/15 bg-white px-3.5 py-2.5 text-[15px] text-ink outline-none transition-colors focus:border-gold"
-            placeholder="Your name"
+            className={inputCls}
           />
-          {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
+          {errors.name && <p className={errorCls}>{errors.name.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-navy">
-            Email address
-          </label>
-          <input
-            id="email"
-            type="email"
-            {...register("email")}
-            className="w-full border border-navy/15 bg-white px-3.5 py-2.5 text-[15px] text-ink outline-none transition-colors focus:border-gold"
-            placeholder="you@example.com"
-          />
-          {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
-        </div>
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-navy">
-            Phone <span className="text-steel"></span>
+          <label htmlFor="phone" className={labelCls}>
+            Phone
           </label>
           <input
             id="phone"
             type="tel"
+            autoComplete="tel"
+            aria-invalid={!!errors.phone}
             {...register("phone")}
-            className="w-full border border-navy/15 bg-white px-3.5 py-2.5 text-[15px] text-ink outline-none transition-colors focus:border-gold"
+            className={inputCls}
             placeholder="+971 5x xxx xxxx"
           />
+          {errors.phone && <p className={errorCls}>{errors.phone.message}</p>}
+        </div>
+      </div>
+
+      <div className="grid gap-7 sm:grid-cols-2">
+        <div>
+          <label htmlFor="email" className={labelCls}>
+            Email <span className="font-normal text-steel">(optional)</span>
+          </label>
+          <input
+            id="email"
+            type="email"
+            autoComplete="email"
+            aria-invalid={!!errors.email}
+            {...register("email")}
+            className={inputCls}
+          />
+          {errors.email && <p className={errorCls}>{errors.email.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-navy">
+          <label htmlFor="service" className={labelCls}>
             Service needed
           </label>
-          <select
-            id="service"
-            {...register("service")}
-            className="w-full border border-navy/15 bg-white px-3.5 py-2.5 text-[15px] text-ink outline-none transition-colors focus:border-gold"
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select a service
-            </option>
+          <select id="service" {...register("service")} className={inputCls}>
+            <option value="">Select a service</option>
             {services.map((s) => (
               <option key={s.slug} value={s.title}>
                 {s.title}
@@ -127,35 +121,25 @@ Thank you.`;
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-navy">
-          Tell us about the job
+        <label htmlFor="message" className={labelCls}>
+          About the job
         </label>
         <textarea
           id="message"
-          rows={5}
+          rows={4}
+          aria-invalid={!!errors.message}
           {...register("message")}
-          className="w-full border border-navy/15 bg-white px-3.5 py-2.5 text-[15px] text-ink outline-none transition-colors focus:border-gold"
-          placeholder="Site location, the issue you're facing, and your timeline…"
+          className={inputCls}
+          placeholder="Site location, what the problem is, and when you need it done"
         />
-        {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message.message}</p>}
+        {errors.message && <p className={errorCls}>{errors.message.message}</p>}
       </div>
 
       <button
         type="submit"
-        disabled={isSubmitting}
-        className="inline-flex items-center gap-2 bg-gold px-7 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold-light disabled:opacity-60"
+        className="chamfer-sm group inline-flex w-full items-center justify-center gap-2 bg-whatsapp sm:w-auto px-7 py-3.5 text-sm font-semibold text-navy transition-colors hover:bg-whatsapp-dark focus-visible:bg-whatsapp-dark focus-visible:underline focus-visible:outline-none"
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {isSubmitting ? (
-            <motion.span key="loading" className="flex items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <Loader2 className="h-4 w-4 animate-spin" /> Sending&hellip;
-            </motion.span>
-          ) : (
-            <motion.span key="idle" className="flex items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <Send className="h-4 w-4" /> Send via WhatsApp
-            </motion.span>
-          )}
-        </AnimatePresence>
+        <FaWhatsapp size={17} className="transition-transform duration-300 group-hover:scale-110" /> Continue on WhatsApp
       </button>
     </form>
   );
