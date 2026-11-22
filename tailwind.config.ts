@@ -21,13 +21,23 @@ const config: Config = {
           DEFAULT: "#D4B06A",
           light: "#E7C98A",
           dark: "#B88F43",
+          // Gold for text on light backgrounds (passes WCAG AA on bg/white).
+          ink: "#7E5F24",
         },
         steel: "#5C6B78",
+        whatsapp: {
+          DEFAULT: "#25D366",
+          dark: "#1EBE5A",
+        },
+        body: "#33414C",
+        "on-dark": "#D9DEE4",
+        "on-dark-muted": "#A9B6C0",
+        "on-dark-faint": "#8295A2",
       },
 
       fontFamily: {
-        display: ["var(--font-bricolage)", "sans-serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-plex-condensed)", "Arial Narrow", "sans-serif"],
+        sans: ["var(--font-plex-sans)", "Arial", "sans-serif"],
         mono: ["var(--font-plex-mono)", "monospace"],
       },
 

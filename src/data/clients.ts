@@ -19,7 +19,7 @@ export const clients: Client[] = [
   {
     id: 4,
     name: "Al Falak Contracting",
-    location: "Umm Al Quwain",
+    location: "Umm Al Quwain & Ras Al Khaimah",
   },
   {
     id: 5,
@@ -105,10 +105,5 @@ export const clients: Client[] = [
     id: 21,
     name: "Chemsystem",
     location: "Umm Al Quwain",
-  },
-  {
-    id: 22,
-    name: "Al Falak Contracting",
-    location: "Ras Al Khaimah",
   },
 ];

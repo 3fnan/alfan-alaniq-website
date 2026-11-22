@@ -7,16 +7,16 @@ interface BadgeProps {
   tone?: "light" | "dark";
 }
 
+/** Small mono label. Use sparingly, only where it carries information. */
 export default function Badge({ children, className, tone = "light" }: BadgeProps) {
   return (
     <span
       className={cn(
-        "mb-4 inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.18em]",
-        tone === "dark" ? "text-gold-light" : "text-gold",
+        "mb-4 inline-block font-mono text-xs",
+        tone === "dark" ? "text-gold-light" : "text-gold-ink",
         className
       )}
     >
-      <span className={cn("h-px w-5", tone === "dark" ? "bg-gold-light" : "bg-gold")} />
       {children}
     </span>
   );

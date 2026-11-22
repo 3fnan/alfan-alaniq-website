@@ -18,20 +18,21 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     <AnimatePresence>
       {open && (
         <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.25, ease: "easeInOut" }}
+          initial={{ height: 0 }}
+          animate={{ height: "auto" }}
+          exit={{ height: 0 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
           className="overflow-hidden border-t border-gold/15 bg-navy md:hidden"
         >
-          <ul className="flex flex-col gap-1 px-7 py-4">
+          <ul className="flex flex-col px-6 py-3">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={onClose}
+                  aria-current={pathname === link.href ? "page" : undefined}
                   className={cn(
-                    "block py-2.5 text-sm uppercase tracking-wide text-[#D9DEE4]",
+                    "block border-b border-white/5 py-3 text-[15px] text-on-dark",
                     pathname === link.href && "text-gold-light"
                   )}
                 >
@@ -43,7 +44,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="mt-2 block w-full rounded-sm border border-gold px-4 py-2.5 text-center text-sm font-semibold text-gold-light"
+                className="mb-2 mt-4 chamfer-sm block w-full bg-gold px-4 py-3 text-center text-sm font-semibold text-navy"
               >
                 Request a Quote
               </Link>

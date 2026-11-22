@@ -11,7 +11,7 @@ export default function OrganizationSchema() {
     url: "https://www.alfanalaniq.ae",
 
     logo:
-      "https://www.alfanalaniq.ae/images/about/about-installation.jpeg",
+      "https://www.alfanalaniq.ae/images/about/about-installation.png",
 
     description:
       "Professional HVAC, MEP, ducting, fit-out and technical services contractor based in Dubai, UAE.",
@@ -29,7 +29,6 @@ export default function OrganizationSchema() {
       addressCountry: "AE",
     },
 
-    vatID: company.trn,
   };
 
   return (

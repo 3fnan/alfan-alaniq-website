@@ -13,13 +13,11 @@ export default function HomePage() {
     <main>
       <OrganizationSchema />
       <HeroSection />
-      <DuctDivider />
-      <AboutSection />
-      <DuctDivider />
-      <ProjectsSection />
-      <DuctDivider />
+      <DuctDivider className="bg-bg py-2" />
       <ServicesSection />
+      <ProjectsSection />
       <WhyChooseUsSection />
+      <AboutSection showImage={false} />
       <ClientsSection />
       <ContactCTASection />
     </main>

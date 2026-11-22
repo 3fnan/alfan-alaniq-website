@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg: #f7f4ec;
+  --color-text: #161b22;
+  --color-navy: #0e2238;
+  --color-gold: #d4b06a;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,18 +16,12 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background: var(--color-gold);
   color: var(--color-navy);
-}
-
-:root {
-  --color-bg: #f7f4ec;
-  --color-text: #161b22;
-  --color-navy: #0e2238;
-  --color-gold: #d4b06a;
 }
 
 @layer utilities {
@@ -29,15 +30,11 @@ body {
   }
 }
 
-/* ==========================
-   CLIENT LOGO MARQUEE
-========================== */
-
+/* Client logo marquee */
 @keyframes marquee {
   from {
     transform: translateX(0%);
   }
-
   to {
     transform: translateX(-50%);
   }
@@ -46,9 +43,41 @@ body {
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .marquee:hover {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Cut-corner shape, like a cut sheet-metal / duct panel. Replaces boxes. */
+.chamfer-sm {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.chamfer {
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+}
+
+.chamfer-lg {
+  clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 44px 100%, 0 calc(100% - 44px));
 }

@@ -2,35 +2,33 @@ import type { WhyChooseUsItem } from "@/types";
 
 export const whyChooseUs: WhyChooseUsItem[] = [
   {
-    title: "Complete Technical Solutions",
+    title: "We look for the cause",
     description:
-      "From HVAC installation and electrical works to pumping systems and fit-out support, we deliver reliable solutions under one experienced team.",
-    iconKey: "support",
-  },
-  {
-    title: "Think-Together Approach",
-    description: "We solve the real problem behind a comfort complaint, not just the symptom.",
+      "A room that won't cool is often a duct, balancing or humidity problem, not a weak unit. We find out which before quoting.",
     iconKey: "team",
   },
   {
-    title: "Full In-House Trades",
-    description: "MEP engineers, HVAC technicians, pipe fitters, electricians and duct fabricators on one team.",
+    title: "Our own trades",
+    description:
+      "MEP engineers, HVAC technicians, pipe fitters, electricians and duct fabricators working as one in-house team.",
     iconKey: "tools",
   },
   {
-    title: "From Design to Delivery",
-    description: "Design support, installation, testing and commissioning, and project handover under one experienced team.",
+    title: "Design through handover",
+    description:
+      "Load calculation, duct design, installation, testing and commissioning, handled by the same team.",
     iconKey: "support",
   },
   {
-    title: "Prompt Delivery",
-    description: "Site visits and breakdown repairs handled with a clear, fast response.",
+    title: "Quick site visits",
+    description:
+      "Site visits and breakdown repairs are handled promptly, with a clear explanation of what's wrong and what it will take to fix.",
     iconKey: "speed",
   },
   {
-    title: "Emirates-Wide Coverage",
-    description: "Project experience across Dubai, Sharjah, Abu Dhabi, RAK, Fujairah and Umm Al Quwain.",
+    title: "Work across the Emirates",
+    description:
+      "Completed work in Dubai, Sharjah, Abu Dhabi, Ras Al Khaimah, Fujairah and Umm Al Quwain.",
     iconKey: "coverage",
   },
-
 ];

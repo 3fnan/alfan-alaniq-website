@@ -8,7 +8,7 @@ export const services: Service[] = [
     description:
       "Chillers, ducted & ductless splits, rooftop packaged units, VRF, FCUs and AHUs.",
     longDescription:
-      "We install chillers, ducted split units, rooftop packaged units, Variable Refrigerant Flow (VRF) systems, ductless split units, fan coil units, air handling units and fresh air handling units — sized and commissioned to spec.",
+      "We install chillers, ducted split units, rooftop packaged units, Variable Refrigerant Flow (VRF) systems, ductless split units, fan coil units, air handling units and fresh air handling units, sized and commissioned to the design.",
     icon: Snowflake,
     image: "/images/services/equipment.png",
   },
@@ -37,7 +37,7 @@ export const services: Service[] = [
     title: "Repair Services",
     description: "Breakdown repair service for air-conditioning equipment, all makes and models.",
     longDescription:
-      "Our technicians provide breakdown repair service for air-conditioning equipment across all makes and models — diagnosed on-site, fixed fast.",
+      "Our technicians provide breakdown repair service for air-conditioning equipment across all makes and models. Faults are diagnosed on site.",
     icon: Wrench,
     image: "/images/services/repair.png",
   },
