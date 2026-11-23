@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Stat from "@/components/ui/Stat";
 import { EASE } from "@/components/ui/Reveal";
-import { company, whatsappHref } from "@/data/company";
+import { company } from "@/data/company";
 import { companyStats } from "@/data/stats";
 
 const HEADLINE = [
@@ -133,9 +132,6 @@ export default function HeroSection() {
           <motion.div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4" {...rise(0.62)}>
             <Button href="/contact" variant="primary" className="w-full sm:w-auto">
               Request a Quote
-            </Button>
-            <Button href={whatsappHref()} variant="whatsapp" arrow={false} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <FaWhatsapp size={17} /> WhatsApp us
             </Button>
           </motion.div>
         </div>
